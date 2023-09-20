@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Ip2geo::factory(10)->create();
+        Ip2geo::factory(5)->create();
     }
 }

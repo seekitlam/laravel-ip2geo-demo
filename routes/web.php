@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Ip2geoController;
 use App\Models\Ip2geo;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('ip2geo', [
-        'ip2geos' => Ip2geo::all()
-    ]);
-});
+Route::get('/', [Ip2geoController::class, 'index']);

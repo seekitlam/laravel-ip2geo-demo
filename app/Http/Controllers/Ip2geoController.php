@@ -11,7 +11,6 @@ class Ip2geoController extends Controller
 {
     public function index()
     {
-
         try {
             $ip2geos = Ip2geo::all();
 
@@ -21,7 +20,7 @@ class Ip2geoController extends Controller
 
             $results = $ip2geos->map(function ($ip2geo) {
 
-                $result  = Http::get('http://ip-api.com/json/'.$ip2geo['ip']);
+                $result  = Http::get('http://ip-api.com/json/' . $ip2geo['ip']);
 
                 $data = json_decode($result, true);
 
@@ -37,7 +36,7 @@ class Ip2geoController extends Controller
         } catch (ModelNotFoundException $exception) {
             abort(404, 'Custom 404 error message');
         } catch (RequestException $exception) {
-            abort(500, $exception->getMessage());
+            abort(501, $exception->getMessage());
         }
     }
 }

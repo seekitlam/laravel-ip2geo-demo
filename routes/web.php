@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [Ip2geoController::class, 'index']);
+
+// Route::get('/ip2geo/{ip}', [Ip2geoController::class, 'show']);
+

@@ -8,11 +8,14 @@ This repo is my first Laravel project for learning purpose. The goal is to have 
 
 Completed items:
 
-- Generate random IPs using model factory and store them in a database
+- Generate random IPs using model factory and store them in a database (to try out MVC)
 - Get geolocation data from [IP-API](https://ip-api.com/docs/api:json)
-
+- Display the IP and results
+- Feature tests
+- API to lookup an IP
 
 TODO:
 
-Steps:
+- Publish geolocation data WebSocket or Server-Sent Events
+- Setup a map chart as the consumer of this microservice
 

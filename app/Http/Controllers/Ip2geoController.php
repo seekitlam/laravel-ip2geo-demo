@@ -39,4 +39,22 @@ class Ip2geoController extends Controller
             abort(501, $exception->getMessage());
         }
     }
+
+    public function show($ip)
+    {
+        try {
+
+            $result  = Http::get('http://ip-api.com/json/' . $ip);
+
+            $data = json_decode($result, true);
+
+            if ($data['status'] == 'fail') {
+                abort(500, $data['message']);
+            } else
+                return $result;
+
+        } catch (RequestException $exception) {
+            abort(501, $exception->getMessage());
+        }
+    }
 }
